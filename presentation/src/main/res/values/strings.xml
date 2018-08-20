@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Currency display</string>
+    <string name="error_internet_not_available">Internet is not available</string>
+    <string name="error_server_not_available">server is not available</string>
+    <string name="error_server">server error</string>
+    <string name="error">Unexpected error</string>
+</resources>
