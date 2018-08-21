@@ -11,13 +11,12 @@ import by.st.currencydisplay.databinding.ActivityRateListBinding;
 import by.st.currencydisplay.presentation.base.BaseMvvmActivity;
 
 import by.st.currencydisplay.R;
-import by.st.currencydisplay.presentation.screens.list.helper.SimpleItemTouchHelperCallback;
+import by.st.currencydisplay.presentation.screens.list.item.helper.SimpleItemTouchHelperCallback;
 
 public class RateListActivity extends BaseMvvmActivity<RateListViewModel,
         ActivityRateListBinding, RateListRouter> {
     @Override
     protected RateListViewModel provideViewModel() {
-
         return ViewModelProviders.of(this).get(RateListViewModel.class);
     }
 
@@ -34,6 +33,10 @@ public class RateListActivity extends BaseMvvmActivity<RateListViewModel,
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        adapterSettings();
+    }
+
+    public void adapterSettings() {
         binding.rateList.setLayoutManager(new LinearLayoutManager(this));
         binding.rateList.setAdapter(viewModel.adapter);
 

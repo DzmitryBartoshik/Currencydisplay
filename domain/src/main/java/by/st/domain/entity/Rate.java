@@ -1,7 +1,5 @@
 package by.st.domain.entity;
 
-import java.util.Date;
-
 public class Rate implements DomainModel {
     private int Cur_ID;
     private String Date;

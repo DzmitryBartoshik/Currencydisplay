@@ -1,14 +1,11 @@
 package by.st.currencydisplay.presentation.screens.list;
 
-import android.util.Log;
-
 import java.util.List;
 
 import javax.inject.Inject;
 
 import by.st.currencydisplay.app.App;
 import by.st.currencydisplay.presentation.base.BaseViewModel;
-import by.st.currencydisplay.presentation.base.recycler.ClickedItemModel;
 import by.st.currencydisplay.presentation.screens.list.item.RateListAdapter;
 import by.st.domain.entity.Rate;
 import by.st.domain.usescases.GetListRateUseCase;
@@ -29,15 +26,13 @@ public class RateListViewModel extends BaseViewModel<RateListRouter> {
 
     public RateListViewModel() {
         getRateList();
-        adapterClickObserver();
     }
 
     public void getRateList() {
-
         listRateUseCase.getRates().subscribe(new Observer<List<Rate>>() {
             @Override
             public void onSubscribe(Disposable d) {
-
+                getCompositeDisposable().add(d);
             }
 
             @Override
@@ -52,29 +47,6 @@ public class RateListViewModel extends BaseViewModel<RateListRouter> {
 
             @Override
             public void onComplete() {
-            }
-        });
-    }
-
-    public void adapterClickObserver() {
-        adapter.observeItemClick().subscribe(new Observer<ClickedItemModel>() {
-            @Override
-            public void onSubscribe(Disposable d) {
-
-            }
-
-            @Override
-            public void onNext(ClickedItemModel clickedItemModel) {
-            }
-
-            @Override
-            public void onError(Throwable e) {
-
-            }
-
-            @Override
-            public void onComplete() {
-
             }
         });
     }

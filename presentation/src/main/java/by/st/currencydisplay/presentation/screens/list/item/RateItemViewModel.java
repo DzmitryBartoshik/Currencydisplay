@@ -1,18 +1,13 @@
 package by.st.currencydisplay.presentation.screens.list.item;
 
-import android.databinding.Observable;
 import android.databinding.ObservableField;
-
 
 import by.st.currencydisplay.presentation.base.recycler.BaseItemViewModel;
 import by.st.domain.entity.Rate;
 
 public class RateItemViewModel extends BaseItemViewModel<Rate> {
-    public ObservableField<String> bynRate=new ObservableField<>();
-    public ObservableField<String> description=new ObservableField<>();
-
-    public Rate rate;
-    public int position = 0;
+    public ObservableField<String> bynRate = new ObservableField<>();
+    public ObservableField<String> description = new ObservableField<>();
 
     @Override
     public void setItem(Rate rate, int position) {

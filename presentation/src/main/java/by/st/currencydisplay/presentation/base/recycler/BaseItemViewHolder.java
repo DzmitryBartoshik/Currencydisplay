@@ -2,12 +2,11 @@ package by.st.currencydisplay.presentation.base.recycler;
 
 import android.annotation.SuppressLint;
 import android.databinding.ViewDataBinding;
-import android.graphics.Color;
 import android.support.v7.widget.RecyclerView;
 
 import by.st.currencydisplay.BR;
 import by.st.currencydisplay.R;
-import by.st.currencydisplay.presentation.screens.list.helper.ItemTouchHelperViewHolder;
+import by.st.currencydisplay.presentation.screens.list.item.helper.ItemTouchHelperViewHolder;
 import by.st.domain.entity.DomainModel;
 
 public abstract class BaseItemViewHolder<

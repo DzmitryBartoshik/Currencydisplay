@@ -19,9 +19,6 @@ public abstract class BaseMvvmActivity<
     protected B binding;
     protected R router;
 
-    /**
-     * Use ViewModelProviders.of(this).get(ViewModel.class);
-     */
     protected abstract VM provideViewModel();
 
     protected abstract int provideLayoutId();

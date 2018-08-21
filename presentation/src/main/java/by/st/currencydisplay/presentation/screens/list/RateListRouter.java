@@ -6,6 +6,4 @@ public class RateListRouter extends BaseRouter<RateListActivity> {
     public RateListRouter(RateListActivity activity) {
         super(activity);
     }
-
-
 }

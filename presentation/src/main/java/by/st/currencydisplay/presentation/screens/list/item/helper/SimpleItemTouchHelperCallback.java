@@ -1,4 +1,4 @@
-package by.st.currencydisplay.presentation.screens.list.helper;
+package by.st.currencydisplay.presentation.screens.list.item.helper;
 
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.helper.ItemTouchHelper;

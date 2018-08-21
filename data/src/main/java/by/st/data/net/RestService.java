@@ -23,7 +23,6 @@ public class RestService {
     private static final String RATES_REQUEST_URL = "http://www.nbrb.by/API/ExRates/";
     private ErrorParserTransformer errorParserTransformer;
 
-
     @Inject
     public RestService() {
         HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
@@ -57,7 +56,4 @@ public class RestService {
                 .getRates(0)
                 .compose(errorParserTransformer.<List<RateResponse>, HttpError>parseHttpError());
     }
-
-
-
 }

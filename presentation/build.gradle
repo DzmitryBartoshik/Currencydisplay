@@ -24,7 +24,6 @@ android {
 dependencies {
     //View
     implementation "com.android.support:appcompat-v7:$supportVersion"
-    implementation "com.android.support.constraint:constraint-layout:$constraintVersion"
     implementation "com.android.support:recyclerview-v7:$supportVersion"
     implementation "com.android.support:design:$supportVersion"
 
