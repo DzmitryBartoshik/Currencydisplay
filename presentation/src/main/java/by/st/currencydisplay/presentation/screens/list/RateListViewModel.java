@@ -8,6 +8,7 @@ import javax.inject.Inject;
 
 import by.st.currencydisplay.app.App;
 import by.st.currencydisplay.presentation.base.BaseViewModel;
+import by.st.currencydisplay.presentation.base.recycler.ClickedItemModel;
 import by.st.currencydisplay.presentation.screens.list.item.RateListAdapter;
 import by.st.domain.entity.Rate;
 import by.st.domain.usescases.GetListRateUseCase;
@@ -28,6 +29,7 @@ public class RateListViewModel extends BaseViewModel<RateListRouter> {
 
     public RateListViewModel() {
         getRateList();
+        adapterClickObserver();
     }
 
     public void getRateList() {
@@ -45,7 +47,29 @@ public class RateListViewModel extends BaseViewModel<RateListRouter> {
 
             @Override
             public void onError(Throwable e) {
-                Log.e("AAA","Error "+e.toString());
+                router.showError(e);
+            }
+
+            @Override
+            public void onComplete() {
+            }
+        });
+    }
+
+    public void adapterClickObserver() {
+        adapter.observeItemClick().subscribe(new Observer<ClickedItemModel>() {
+            @Override
+            public void onSubscribe(Disposable d) {
+
+            }
+
+            @Override
+            public void onNext(ClickedItemModel clickedItemModel) {
+            }
+
+            @Override
+            public void onError(Throwable e) {
+
             }
 
             @Override

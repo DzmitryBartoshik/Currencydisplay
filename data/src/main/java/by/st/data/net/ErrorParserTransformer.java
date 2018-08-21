@@ -44,12 +44,12 @@ public class ErrorParserTransformer {
                                     error = new Error(httpError.getMessage(),
                                             ErrorType.SERVER_ERROR);
                                 } else if (throwable instanceof UnknownHostException) {
-                                    error = new Error("Internet is not available",
-                                            ErrorType.INTERNET_IS_NOT_AVAILABLE);
-                                } else if (throwable instanceof SocketTimeoutException
-                                        || throwable instanceof ConnectException) {
                                     error = new Error("Server is not available",
                                             ErrorType.SERVER_IS_NOT_AVAILABLE);
+                                } else if (throwable instanceof SocketTimeoutException
+                                        || throwable instanceof ConnectException) {
+                                    error = new Error("Internet is not available",
+                                            ErrorType.INTERNET_IS_NOT_AVAILABLE);
                                 } else {
                                     error = new Error("Unexpected error",
                                             ErrorType.UNEXPECTED_ERROR);
@@ -61,3 +61,4 @@ public class ErrorParserTransformer {
         };
     }
 }
+

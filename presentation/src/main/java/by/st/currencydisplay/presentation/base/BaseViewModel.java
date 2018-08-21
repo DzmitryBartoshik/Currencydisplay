@@ -37,7 +37,6 @@ public abstract class BaseViewModel <R extends BaseRouter> extends ViewModel {
         return compositeDisposable;
     }
 
-
     @Override
     protected void onCleared() {
         super.onCleared();

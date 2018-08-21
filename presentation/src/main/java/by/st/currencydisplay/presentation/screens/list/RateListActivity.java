@@ -4,16 +4,17 @@ import android.arch.lifecycle.ViewModelProviders;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.helper.ItemTouchHelper;
 
 import by.st.currencydisplay.databinding.ActivityRateListBinding;
 import by.st.currencydisplay.presentation.base.BaseMvvmActivity;
 
 import by.st.currencydisplay.R;
+import by.st.currencydisplay.presentation.screens.list.helper.SimpleItemTouchHelperCallback;
 
 public class RateListActivity extends BaseMvvmActivity<RateListViewModel,
-        ActivityRateListBinding, RateListRouter>  {
-
-
+        ActivityRateListBinding, RateListRouter> {
     @Override
     protected RateListViewModel provideViewModel() {
 
@@ -35,6 +36,11 @@ public class RateListActivity extends BaseMvvmActivity<RateListViewModel,
         super.onCreate(savedInstanceState);
         binding.rateList.setLayoutManager(new LinearLayoutManager(this));
         binding.rateList.setAdapter(viewModel.adapter);
-        binding.rateList.setHasFixedSize(true);
+
+        ItemTouchHelper.Callback callback = new SimpleItemTouchHelperCallback(viewModel.adapter);
+        ItemTouchHelper itemTouchHelper = new ItemTouchHelper(callback);
+
+        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.rate_list);
+        itemTouchHelper.attachToRecyclerView(recyclerView);
     }
 }

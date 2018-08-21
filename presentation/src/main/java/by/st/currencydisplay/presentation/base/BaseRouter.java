@@ -1,6 +1,6 @@
 package by.st.currencydisplay.presentation.base;
 
-import android.util.Log;
+
 import android.widget.Toast;
 
 import by.st.currencydisplay.R;
@@ -11,14 +11,6 @@ public class BaseRouter <A extends BaseActivity> {
 
     public BaseRouter(A activity) {
         this.activity = activity;
-    }
-
-    public void goBack() {
-        activity.onBackPressed();
-    }
-
-    public void finishActivity() {
-        activity.finish();
     }
 
     public void showError(Throwable throwable) {
